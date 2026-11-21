@@ -10,14 +10,30 @@ Static recompilation of **LegendOfDragoon** built on
 [psxrecomp](https://github.com/mstan/psxrecomp) and
 [recomp-ui](https://github.com/RetroPortingToolKit/recomp-ui).
 
-_Add a short pitch in catalog_identity.json / README._
+Action-RPG by SCE Japan Studio (PlayStation, 1999/2000), recompiled to run natively with modern enhancements.
 
 | | |
 |---|---|
 | Players | 1 |
-| Region | USA |
+| Region | Europe (German, SCES-03045, 4 discs) |
 | Publisher | - |
 | Year | - |
+
+## What is built in
+
+**Status: tested only at the beginning.**
+
+- **16:9 widescreen in battle**, including culling hooks so edge polygons no longer pop in.
+- **60 fps** instead of PAL 50 Hz.
+- Multi-disc support (4 discs).
+
+Known limitation: field scenes use pre-rendered backgrounds that stay 4:3 wide, so black side bars remain there. Not yet tested: world map, towns, menus, FMV.
+
+### Common to all recomps in this family
+
+- **60 fps:** PAL titles are forced to NTSC 60 Hz timing (`PSX_FORCE_60HZ=0` restores 50 Hz); the game runs ~20 % faster than on a PAL console.
+- **Faster loading:** CD speed-up and turbo while the memory card is being read.
+- **16:9** is provided by a trusted mod plugin (fixed display aspect 16:9) together with widescreen culling hooks; each feature can be switched off in `mods/state.toml`.
 
 Scaffolded with the New Project Layout. See
 `psxrecomp/docs/GAME_PROJECT_SETUP.md` for the full flow.
