@@ -1,0 +1,23 @@
+format_version = 11
+id = "lod.enhancement.widescreen"
+version = "1.0.0"
+name = "Widescreen"
+author = "LoD recomp"
+description = "Native-wide 16:9 presentation. Experimental: 2D backdrops and some culls are not yet widened."
+resolver = "declarative"
+save_compatibility = "shared"
+
+[[target]]
+game_id = "SCES-03045"
+
+[[feature]]
+id = "widescreen"
+name = "Widescreen 16:9"
+description = "Renders the game in 16:9 instead of 4:3. Experimental."
+group = "Visual"
+channel = "experimental"
+default_enabled = true
+
+[[plugin]]
+feature = "widescreen"
+id = "lod.widescreen"

@@ -1,0 +1,146 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "LegendOfDragoon"
+id = "SCES-03045"
+players = 1
+exe = "disc/SCES_030.45"
+disc = "C:\\Discs\\LOD\\D1\\Legend of Dragoon, The (Germany) (Disc 1).cue"
+discs = ["C:/Discs/LOD/D1/Legend of Dragoon, The (Germany) (Disc 1).cue", "C:/Discs/LOD/D2/Legend of Dragoon, The (Germany) (Disc 2).cue", "C:/Discs/LOD/D3/Legend of Dragoon, The (Germany) (Disc 3).cue", "C:/Discs/LOD/D4/Legend of Dragoon, The (Germany) (Disc 4).cue"]
+disc_serials = ["SCES-03045", "SCES-13045", "SCES-23045", "SCES-33045"]
+load_address = "0x80188888"
+entry_pc = "0x801C0620"
+text_size = "0x0003F000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Legend of Dragoon, The (Germany) (Disc 1).bin"
+cue_name = "Legend of Dragoon, The (Germany) (Disc 1).cue"
+boot_exe = "SCES_030.45"
+known_sizes = [462781872]
+known_md5 = [
+  "6885b7c18d1024ba30fd3996a1ac3a5e",
+]
+known_sha1 = [
+  "b7fe54e973d629385caea50b95acf8ced804f97f",
+]
+known_crc32 = [
+  "1c8a2199",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "LegendOfDragoon Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "16:9"
+
+[widescreen]
+gte_game_mode = true
+[widescreen.cull]
+auto_screen_x = true
+# Overlay per-vertex screen-X rejects (centre-origin 384 wide: +-192), from captured
+# battle/field overlays. Left edge: slti x,-192; right edge: slti x,193.
+slti_sites = [
+  "0x800CC778",
+  "0x800CCE14",
+  "0x800DB000",
+  "0x800DB014",
+  "0x800DB028",
+  "0x800DB03C",
+  "0x800DB2E4",
+  "0x800DB2F8",
+  "0x800DB30C",
+  "0x800DB604",
+  "0x800DB618",
+  "0x800DB62C",
+  "0x800DB640",
+  "0x800DB930",
+  "0x800DB944",
+  "0x800DB958",
+  "0x800DBC14",
+  "0x800DBC28",
+  "0x800DBC3C",
+  "0x800DBC50",
+  "0x800DBF44",
+  "0x800DBF58",
+  "0x800DBF6C",
+  "0x800DC904",
+  "0x800DC918",
+  "0x800DC92C",
+  "0x800DC940",
+  "0x800DCC30",
+  "0x800DCC44",
+  "0x800DCC58",
+  "0x800DD590",
+  "0x800DD914",
+  "0x800DDCCC",
+  "0x800DDCE0",
+  "0x800DDCF4",
+  "0x800DDD08",
+  "0x800DDFFC",
+  "0x800DE010",
+  "0x800DE024",
+]
+slti_lower_sites = [
+  "0x800CC6F0",
+  "0x800CC704",
+  "0x800CCD64",
+  "0x800DAF60",
+  "0x800DAF74",
+  "0x800DAF88",
+  "0x800DAF9C",
+  "0x800DB26C",
+  "0x800DB280",
+  "0x800DB294",
+  "0x800DB564",
+  "0x800DB578",
+  "0x800DB58C",
+  "0x800DB5A0",
+  "0x800DB8B8",
+  "0x800DB8CC",
+  "0x800DB8E0",
+  "0x800DBB74",
+  "0x800DBB88",
+  "0x800DBB9C",
+  "0x800DBBB0",
+  "0x800DBECC",
+  "0x800DBEE0",
+  "0x800DBEF4",
+  "0x800DC864",
+  "0x800DC878",
+  "0x800DC88C",
+  "0x800DC8A0",
+  "0x800DCBB8",
+  "0x800DCBCC",
+  "0x800DCBE0",
+  "0x800DD4F0",
+  "0x800DD89C",
+  "0x800DDC2C",
+  "0x800DDC40",
+  "0x800DDC54",
+  "0x800DDC68",
+  "0x800DDF84",
+  "0x800DDF98",
+  "0x800DDFAC",
+]
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "d623602e7a0f8f1ee5b452231dff9058e1053baeb43374bb7dbf88ae0716a6df"

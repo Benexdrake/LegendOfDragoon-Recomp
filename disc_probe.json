@@ -1,0 +1,31 @@
+{
+  "cue_path": "C:\\Discs\\LOD\\D1\\Legend of Dragoon, The (Germany) (Disc 1).cue",
+  "cue_name": "Legend of Dragoon, The (Germany) (Disc 1).cue",
+  "bin_name": "Legend of Dragoon, The (Germany) (Disc 1).bin",
+  "track_count": 1,
+  "data_track_size": 462781872,
+  "data_track_md5": "6885b7c18d1024ba30fd3996a1ac3a5e",
+  "data_track_sha1": "b7fe54e973d629385caea50b95acf8ced804f97f",
+  "data_track_crc32": "1c8a2199",
+  "boot_exe": "SCES_030.45",
+  "serial": "SCES-03045",
+  "serial_exe": "SCES_030.45",
+  "volume_id": "SCES03045",
+  "display_name": "LegendOfDragoon",
+  "load_address": "0x80188888",
+  "entry_pc": "0x801C0620",
+  "text_size": "0x0003F000",
+  "stack_base": "0x801FFFF0",
+  "require_cue": true,
+  "required_disc_fp": "d623602e7a0f8f1ee5b452231dff9058e1053baeb43374bb7dbf88ae0716a6df",
+  "boot_exe_sha256": "d77ace015c35af924e96bf21d4645bb597245b9c276602f88f95622c7392748b",
+  "seed_count": 73,
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
