@@ -7,6 +7,7 @@ name = "lod"
 display_name = "LegendOfDragoon"
 exe_name = "LegendOfDragoon"
 version_file = "VERSION"
+player_game_toml = "packaging/release/game.toml"
 
 [build]
 cmake_args = ["-DPSX_SDL_BACKEND=SDL3", "-DPSX_PGXP_VARIANT=OFF"]
@@ -23,7 +24,13 @@ ship = true
 
 [payload]
 start_here = "packaging/release/START_HERE.txt"
-files = ["README.md"]
+files = [
+  "README.md",
+  "LICENSE",
+  "RELEASE_NOTES.md",
+  "THIRD_PARTY_NOTICES.md",
+  "DISC.md",
+]
 
 [linux]
 app_run = "packaging/linux/AppRun"

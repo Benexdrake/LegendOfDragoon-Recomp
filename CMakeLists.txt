@@ -39,6 +39,10 @@ endif()
 
 psxrecomp_add_game_runtime(psx-runtime
     PRELOADED_MODS_DIR "${PSX_PRELOADED_MODS}"
+    # Public releases may not ship the generic loading accelerators.
+    EXCLUDE_BUILTIN_MODS
+        psx.enhancement.cd-speed
+        psx.enhancement.fast-loading
     # ENABLE_NETPLAY_IF_PRESENT
     # NETPLAY_LOBBY_URL ws://netplay.retcomm.net:8765
     ENABLE_SETUP_WIZARD

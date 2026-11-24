@@ -1,9 +1,9 @@
 # LegendOfDragoon
 
 <!-- retcomm-readme-metrics -->
-[![GitHub downloads (all assets, all releases)](https://img.shields.io/github/downloads/RetroPortingToolKit/lod-recomp/total)](https://github.com/RetroPortingToolKit/lod-recomp/releases)
-[![GitHub downloads (latest release)](https://img.shields.io/github/downloads/RetroPortingToolKit/lod-recomp/latest/total)](https://github.com/RetroPortingToolKit/lod-recomp/releases/latest)
-[![GitHub release](https://img.shields.io/github/v/release/RetroPortingToolKit/lod-recomp)](https://github.com/RetroPortingToolKit/lod-recomp/releases/latest)
+[![GitHub downloads (all assets, all releases)](https://img.shields.io/github/downloads/Benexdrake/LegendOfDragoon-Recomp/total)](https://github.com/Benexdrake/LegendOfDragoon-Recomp/releases)
+[![GitHub downloads (latest release)](https://img.shields.io/github/downloads/Benexdrake/LegendOfDragoon-Recomp/latest/total)](https://github.com/Benexdrake/LegendOfDragoon-Recomp/releases/latest)
+[![GitHub release](https://img.shields.io/github/v/release/Benexdrake/LegendOfDragoon-Recomp)](https://github.com/Benexdrake/LegendOfDragoon-Recomp/releases/latest)
 <!-- /retcomm-readme-metrics -->
 
 Static recompilation of **LegendOfDragoon** built on
@@ -19,6 +19,12 @@ Action-RPG by SCE Japan Studio (PlayStation, 1999/2000), recompiled to run nativ
 | Publisher | - |
 | Year | - |
 
+## Download
+
+Get the latest build from the [Releases page](https://github.com/Benexdrake/LegendOfDragoon-Recomp/releases/latest) (Windows x64: unzip, start `LegendOfDragoon.exe`).
+
+No game data is included. You need your own copy of the European disc (SCES-03045) as bin/cue; see [DISC.md](DISC.md).
+
 ## What is built in
 
 **Status: tested only at the beginning.**
@@ -32,7 +38,6 @@ Known limitation: field scenes use pre-rendered backgrounds that stay 4:3 wide, 
 ### Common to all recomps in this family
 
 - **60 fps:** PAL titles are forced to NTSC 60 Hz timing (`PSX_FORCE_60HZ=0` restores 50 Hz); the game runs ~20 % faster than on a PAL console.
-- **Faster loading:** CD speed-up and turbo while the memory card is being read.
 - **16:9** is provided by a trusted mod plugin (fixed display aspect 16:9) together with widescreen culling hooks; each feature can be switched off in `mods/state.toml`.
 
 Scaffolded with the New Project Layout. See
